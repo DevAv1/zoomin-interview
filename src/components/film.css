@@ -1,0 +1,26 @@
+.film {
+  margin-top: 20px;
+}
+.film .progress {
+  position: relative;
+  top: 50%;
+}
+
+.film h2 {
+  color: rgb(221, 56, 84);
+}
+
+.film ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+.film ul li {
+  list-style-type: none;
+  text-align: left;
+}

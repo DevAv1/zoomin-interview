@@ -1,6 +1,7 @@
 import { getFilms } from '../../services/swapi.api'
 import { 
-  FILMS_SET
+  FILMS_SET,
+  SET_FAVORITE
  } from '../actions/action-types'
 
 export const getFilmsAction = () => {
@@ -12,6 +13,19 @@ export const getFilmsAction = () => {
         films
       })
     } catch (err){
+      console.error(err)
+    }
+  }
+}
+
+export const setFavorite = () => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: SET_FAVORITE,
+      })
+
+    } catch (err) {
       console.error(err)
     }
   }

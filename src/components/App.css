@@ -18,6 +18,10 @@ body {
   transition: 0.4s ease;
 }
 
+.app h1 {
+  color: rgb(221, 56, 84);
+}
+
 @media screen and (max-width: 1000px) {
   .app {
     width: 100%;
@@ -30,3 +34,4 @@ body {
   justify-content: center;
   margin: 0 auto;
 }
+
