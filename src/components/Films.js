@@ -3,12 +3,14 @@ import { useDispatch, useSelector  } from 'react-redux'
 import { Film } from './Film';
 import { getFilmsAction } from '../store/actions/films.actions'
 import { getFilms } from '../store/selectors'
+import { getFavorites  } from '../store/selectors'
 import '../components/films.css'
 
 export const Films = () => {
   const dispatch = useDispatch()
   const films = useSelector(getFilms)
-  const localFilmsData = JSON.parse(localStorage.getItem('movies')) || [] ;
+  const favorites = useSelector(getFavorites)
+  const [ localData, setLocalData ] = useState([])
 
   useEffect(() => {
     dispatch(getFilmsAction());
@@ -16,11 +18,16 @@ export const Films = () => {
 
   useEffect(() => {
     localStorage.setItem('films', JSON.stringify(films))
-  }, [localFilmsData])
+  }, [films])
+
+  useEffect(() => {
+    setLocalData(JSON.parse(localStorage.getItem('films') || []))
+  }, [films])
+
 
   return (
     <div className="films">
-      <Film films={films}/>
+      <Film localData={localData}/>
     </div>
   )
 }

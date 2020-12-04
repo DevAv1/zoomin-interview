@@ -1,6 +1,4 @@
-import { 
-  FILMS_SET 
-} from '../actions/action-types'
+import { FILMS_SET } from '../actions/action-types'
 
 const initialState = {
   items: []

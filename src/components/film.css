@@ -1,5 +1,6 @@
 .film {
   margin-top: 20px;
+  padding: 0 10px;
 }
 .film .progress {
   position: relative;
@@ -14,7 +15,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
   margin: 0 auto;
   padding: 0;
 }
