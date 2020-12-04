@@ -2,7 +2,7 @@ export const getFilms = ({ films }) => {
   return films.items;
 };
 
-export const getFavorites = ({ films }) => {
-  return films.ids
+export const getFavorites = ({ favorites }) => {
+  return favorites.ids
 }
 

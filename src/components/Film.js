@@ -1,4 +1,5 @@
 import React from 'react'
+import { setFavorite } from '../store/actions/films.actions'
 import '../components/film.css'
 
 import { 
@@ -8,17 +9,20 @@ import {
   Tooltip,
  } from '@material-ui/core'
 
-export const Film = ({localData}) => {
+export const Film = ({localData, favorites}) => {
 
-  const setFavorite = (film) => {
-    const id = film.episode_id
-    
+  const setFavoriteStatus = (film) => {
+    const id = film.episode_id;
+    setFavorite(id)
   }
-
+  console.log(favorites)
+  console.log(localData)
   return (
     <div className="film">
       <div className="film-header">
         <h2>STAR WARS FILMS</h2>
+        <h1>list of favs:</h1>
+        <p>{favorites}</p>
       </div>
       {localData.length > 0 ?
         localData.map((film) => {
@@ -26,8 +30,8 @@ export const Film = ({localData}) => {
             <ul>
               <Tooltip title="Mark/Unmark as favorite">
                 <Checkbox
-                  // checked
-                  onChange={() => setFavorite(film)}
+                  checked
+                  onChange={() => setFavoriteStatus(film)}
                 />
               </Tooltip>
               <li key={film.title}>{film.title}</li>

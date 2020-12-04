@@ -27,7 +27,7 @@ export const Films = () => {
 
   return (
     <div className="films">
-      <Film localData={localData}/>
+      <Film localData={localData} favorites={favorites}/>
     </div>
   )
 }

@@ -18,11 +18,13 @@ export const getFilmsAction = () => {
   }
 }
 
-export const setFavorite = () => {
+export const setFavorite = (id) => {
   return async (dispatch) => {
     try {
+      const addId = id
       dispatch({
         type: SET_FAVORITE,
+        addId
       })
 
     } catch (err) {
