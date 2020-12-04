@@ -20,15 +20,20 @@ export const App = () => {
   return (
     <div className="app">
       <h1>Star Wars</h1>
-        <Button variant="contained" color="secondary" >button</Button>
+        {/* <Button variant="contained" color="secondary" >button</Button> */}
         <div className="movie-list">
            <h1>Star Wars Movies</h1>
            {
              films.map( film => {
+               return (
+                <ul>
+                 <li>{film.title}</li><Checkbox />
+               </ul>
+               )
               
+
              })
            }
-           <Checkbox />
         </div>
     </div>
   );
