@@ -28,10 +28,4 @@ body {
   }
 }
 
-.app > button {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-}
 
