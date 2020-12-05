@@ -1,4 +1,4 @@
-import { FAVORITE_SET } from '../actions/action-types'
+import { FAVORITE_SET, FAVORITE_INIT } from '../actions/action-types'
 import {
   FAVORITE_MODE
 } from '../../consts'
@@ -23,6 +23,11 @@ export const favorites = (state = initialState, action) => {
           ...state.statuses,
           [action.id]:getNewStatus(currentStatus)
         }
+      }
+    case FAVORITE_INIT :
+      return {
+        ...state,
+        statuses: action.favorites || {}
       }
     default :
     return state;

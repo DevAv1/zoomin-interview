@@ -3,6 +3,6 @@ export const getFilms = ({ films }) => {
 };
 
 export const getFavorites = ({ favorites }) => {
-  return favorites.statuses
+  return favorites.statuses;
 }
 
