@@ -14,7 +14,7 @@
 .film ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   padding: 0;
 }
@@ -23,4 +23,5 @@
 .film ul li {
   list-style-type: none;
   text-align: left;
+  margin: 0 auto;
 }
