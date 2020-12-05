@@ -30,7 +30,6 @@ export const Film = ({title, id, status, onFavoriteModeChange}) => {
           </Tooltip>
         }
       </div>
-        
     </div>
   )
 }
