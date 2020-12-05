@@ -1,15 +1,28 @@
-import { SET_FAVORITE } from '../actions/action-types'
+import { FAVORITE_SET } from '../actions/action-types'
+import {
+  FAVORITE_MODE
+} from '../../consts'
 
 const initialState = {
-  ids: [1,2,4]
+  statuses: {}
+}
+const getNewStatus = (curr) => {
+  if(curr !== FAVORITE_MODE.FAVORITE) {
+    return FAVORITE_MODE.FAVORITE
+  }
+  return FAVORITE_MODE.ONCE_SELECTED
 }
 
 export const favorites = (state = initialState, action) => {
   switch(action.type){
-    case SET_FAVORITE :
+    case FAVORITE_SET :
+      const currentStatus = state.statuses[action.id]
       return {
         ...state,
-        id: action.addId
+        statuses: {
+          ...state.statuses,
+          [action.id]:getNewStatus(currentStatus)
+        }
       }
     default :
     return state;

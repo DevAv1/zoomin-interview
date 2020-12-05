@@ -1,27 +1,6 @@
 .film {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
   padding: 0 10px;
-}
-.film .progress {
-  position: relative;
-  top: 50%;
-}
-
-.film h2 {
-  color: rgb(221, 56, 84);
-}
-
-.film ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 0;
-}
-
-
-.film ul li {
-  list-style-type: none;
-  text-align: left;
-  margin: 0 auto;
 }

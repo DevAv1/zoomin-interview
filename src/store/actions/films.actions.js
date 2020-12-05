@@ -1,8 +1,10 @@
 import { getFilms } from '../../services/swapi.api'
 import { 
   FILMS_SET,
-  SET_FAVORITE
+  FAVORITE_SET
  } from '../actions/action-types'
+ import { saveFavorites } from '../../services/favorites.api' 
+ import { getFavorites } from '../selectors'
 
 export const getFilmsAction = () => {
   return async (dispatch) => {
@@ -18,15 +20,16 @@ export const getFilmsAction = () => {
   }
 }
 
-export const setFavorite = (id) => {
-  return async (dispatch) => {
+export const setFavoriteStatus = (id) => {
+  return async ( dispatch, getState ) => {
     try {
-      const addId = id
       dispatch({
-        type: SET_FAVORITE,
-        addId
+        type: FAVORITE_SET,
+        id
       })
-
+    const state = getState();
+    const favorites = getFavorites(state) // GOD DAMNIT!
+    saveFavorites(favorites)
     } catch (err) {
       console.error(err)
     }
