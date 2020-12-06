@@ -28,7 +28,7 @@ export const setFavoriteStatus = (id) => {
         id
       })
     const state = getState();
-    const favorites = getFavorites(state) // GOD DAMNIT!
+    const favorites = getFavorites(state)
     saveFavorites(favorites)
     } catch (err) {
       console.error(err)
