@@ -25,7 +25,7 @@ export const Film = ({title, id, status, onFavoriteModeChange}) => {
       <div>{title}</div>
       <div>
         {(status === FAVORITE_MODE.ONCE_SELECTED || status === FAVORITE_MODE.FAVORITE) && 
-          <Tooltip title="once selected">
+          <Tooltip title={`${title} ALL TIME FAVORITE`}>
             <div className="star-icon"><i class="fas fa-star" ></i></div>
           </Tooltip>
         }
